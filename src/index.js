@@ -41,40 +41,48 @@ class Board {
     }
 
     getAllArticles() {
-        return this.article
+        return this.article;
     }
 }
 
 class Article {
     constructor(article) {
         const { subject, content, author } = article;
-        if (subject === "" || subject === null) { return error };
-        if (content === "" || content === null) { return error };
-        if (author === "" || author === null) { return error };
+        if (subject === '' || subject === null) {
+            return error;
+        }
+        if (content === '' || content === null) {
+            return error;
+        }
+        if (author === '' || author === null) {
+            return error;
+        }
         this.subject = subject;
         this.content = content;
         this.author = author;
-
     }
 
     reply(comment) {
         comment.createdDate = new Date().toISOString();
         this.comment.push(comment);
-
     }
-    getAllComments(){
-        return this.comment
+    getAllComments() {
+        return this.comment;
     }
 }
 
 class Comment {
     constructor(comment) {
         const { content, author } = comment;
-        if (content === "" || content === null) { return error };
-        if (author === "" || author === null) { return error };
+        if (content === '' || content === null) {
+            return error;
+        }
+        if (author === '' || author === null) {
+            return error;
+        }
         this.content = content;
         this.author = author;
-    };
+    }
 }
 
 module.exports = {
