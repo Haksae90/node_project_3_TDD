@@ -1,7 +1,7 @@
 class Site {
     constructor() {
         this.boards = [];
-    }
+    } 
 
     addBoard(board) {
         const findBoard = this.boards.findIndex((i) => i.name === board.name);
