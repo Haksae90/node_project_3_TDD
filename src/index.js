@@ -9,7 +9,7 @@ class Site {
             board.addedBoard = true;
             this.boards.push(board);
         } else {
-            throw new Error("There is already the same board name.")
+            throw new Error('There is already the same board name.');
         }
     }
 
@@ -22,7 +22,7 @@ class Site {
 class Board {
     constructor(board) {
         if (board === '' || board === null) {
-            throw new Error("You must give board name")
+            throw new Error('You must give board name');
         }
         this.addedBoard = false;
         this.name = board;
@@ -31,7 +31,7 @@ class Board {
 
     publish(article) {
         if (!this.addedBoard) {
-            throw new Error("Please register the board on the site")
+            throw new Error('Please register the board on the site');
         } else {
             article.id = `${this.name}-${Math.random()}`;
             article.createdDate = new Date().toISOString();
@@ -49,13 +49,13 @@ class Article {
     constructor(article) {
         const { subject, content, author } = article;
         if (subject === '' || subject === null) {
-            throw new Error("Please write the subject")
+            throw new Error('Please write the subject');
         }
         if (content === '' || content === null) {
-            throw new Error("Please write the content")
+            throw new Error('Please write the content');
         }
         if (author === '' || author === null) {
-            throw new Error("Please write the author")
+            throw new Error('Please write the author');
         }
         this.subject = subject;
         this.content = content;
@@ -75,10 +75,10 @@ class Comment {
     constructor(comment) {
         const { content, author } = comment;
         if (content === '' || content === null) {
-            throw new Error("Please write the content")
+            throw new Error('Please write the content');
         }
         if (author === '' || author === null) {
-            throw new Error("Please write the author")
+            throw new Error('Please write the author');
         }
         this.content = content;
         this.author = author;
